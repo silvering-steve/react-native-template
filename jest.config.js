@@ -6,5 +6,8 @@ module.exports = {
   transform: {
     '^.+\\.[jt]sx?$': 'babel-jest'
   },
+  moduleNameMapper: {
+    '\\.(css|less)$': '<rootDir>/__mocks__/styleMock.js'
+  },
   setupFilesAfterEnv: ['@testing-library/react-native/extend-expect']
 };
