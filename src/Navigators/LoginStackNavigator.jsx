@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import SplashScreen from '../Screens/SplashScreen/SplashScreen';
 import LoginScreen from '../Screens/LoginScreen/LoginScreen';
+import WalletDrawerNavigator from './WalletDrawerNavigator';
 
 const Stack = createNativeStackNavigator();
 
@@ -12,6 +13,7 @@ const LoginNavigator = () => {
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="Splash" component={SplashScreen} />
       <Stack.Screen name="Login" component={LoginScreen} />
+      <Stack.Screen name="Wallet Drawer" component={WalletDrawerNavigator} />
     </Stack.Navigator>
   );
 };

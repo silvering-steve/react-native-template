@@ -15,11 +15,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 
 const LoginScreen = ({ navigation }) => {
   const handleOnLogin = () => {
-    navigation.replace('Splash');
+    navigation.replace('Wallet Drawer');
   };
 
   return (
-    <SafeAreaView className="flex-1 bg-slate-200">
+    <SafeAreaView className="flex-1 bg-slate-100">
       <View className="basis-3/12 justify-center items-center flex-row">
         <Text className="font-poppins font-bold text-5xl text-[#023E8A]">
           Chip

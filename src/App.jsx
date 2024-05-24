@@ -1,14 +1,14 @@
 import * as React from 'react';
 
 import { NavigationContainer } from '@react-navigation/native';
-import LoginNavigator from '../src/Navigators/LoginNavigator';
+import LoginStackNavigator from '../src/Navigators/LoginStackNavigator';
 
 import '../global.css';
 
 const App = () => {
   return (
     <NavigationContainer>
-      <LoginNavigator />
+      <LoginStackNavigator />
     </NavigationContainer>
   );
 };

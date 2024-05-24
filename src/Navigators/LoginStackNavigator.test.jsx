@@ -1,9 +1,9 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react-native';
+import { render, screen, userEvent } from '@testing-library/react-native';
 
 import { NavigationContainer } from '@react-navigation/native';
 
-import LoginNavigator from './LoginNavigator';
+import LoginStackNavigator from './LoginStackNavigator';
 
 jest.mock('@fortawesome/react-native-fontawesome', () => ({
   FontAwesomeIcon: ''
@@ -17,16 +17,29 @@ afterEach(() => {
   jest.useRealTimers();
 });
 
-describe('AppNavigator', () => {
+describe('LoginStackNavigator', () => {
   it('should change page to Login screen after Splash screen when user not logged in', async () => {
     render(
       <NavigationContainer>
-        <LoginNavigator />
+        <LoginStackNavigator />
       </NavigationContainer>
     );
 
     const loginButton = await screen.findByLabelText('login button');
 
     expect(loginButton).toBeOnTheScreen();
+  });
+
+  it('should change page to Wallet screen after Login screen when user logged in successfully', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <NavigationContainer>
+        <LoginStackNavigator />
+      </NavigationContainer>
+    );
+
+    const loginButton = await screen.findByLabelText('login button');
+    await user.press(loginButton);
   });
 });
