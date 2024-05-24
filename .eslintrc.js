@@ -3,7 +3,8 @@ module.exports = {
   extends: [
     '@react-native-community',
     'plugin:jest/recommended',
-    'plugin:testing-library/react'
+    'plugin:testing-library/react',
+    'plugin:prettier/recommended'
   ],
   plugins: [
     'testing-library',
