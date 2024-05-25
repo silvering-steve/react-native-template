@@ -1,17 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View
-} from 'react-native';
+import { SafeAreaView, StyleSheet, Text, TextInput, View } from 'react-native';
 
 import { faLock } from '@fortawesome/free-solid-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+
+import ActionButton from '../../Components/ActionButton';
 
 const LoginScreen = ({ navigation }) => {
   const handleOnLogin = () => {
@@ -61,14 +56,13 @@ const LoginScreen = ({ navigation }) => {
             {/* Something Wrong ! */}
           </Text>
           {/* Button */}
-          <TouchableOpacity
-            className="bg-[#023E8A] w-2/3 self-center p-3 rounded-xl"
-            onPress={handleOnLogin}
-            accessibilityLabel="login button">
-            <Text className="text-center text-xl font-bold text-white">
-              Login
-            </Text>
-          </TouchableOpacity>
+          <View className="w-2/3 self-center">
+            <ActionButton
+              content={'Login'}
+              onPress={handleOnLogin}
+              accessibilityLabel="login button"
+            />
+          </View>
         </View>
       </View>
     </SafeAreaView>

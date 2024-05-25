@@ -8,6 +8,10 @@ import LoginStackNavigator from './LoginStackNavigator';
 jest.mock('@fortawesome/react-native-fontawesome', () => ({
   FontAwesomeIcon: ''
 }));
+jest.mock('@react-navigation/drawer', () => ({
+  createDrawerNavigator: jest.fn()
+}));
+jest.mock('./WalletDrawerNavigator');
 
 beforeEach(() => {
   jest.useFakeTimers();

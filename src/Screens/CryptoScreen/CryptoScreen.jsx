@@ -9,7 +9,7 @@ import UserInfoCard from '../../Components/UserInfoCard';
 import MenuButton from '../../Components/MenuButton';
 
 const WalletScreen = () => {
-  const balance = 'Rp ' + (100000).toLocaleString();
+  const assets = 'Rp ' + (100000).toLocaleString();
   const phoneNumber = '081238161748';
 
   return (
@@ -17,8 +17,8 @@ const WalletScreen = () => {
       <View className="basis-4/12">
         <View className="mx-5">
           <UserInfoCard
-            money={balance}
-            title="Balance"
+            money={assets}
+            title="Assets"
             phoneNumber={phoneNumber}
           />
           <View className="flex-row justify-center gap-5 px-2 mt-3">
