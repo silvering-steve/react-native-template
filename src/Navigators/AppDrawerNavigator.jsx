@@ -2,9 +2,9 @@ import React from 'react';
 
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
-import CryptoScreen from '../Screens/CryptoScreen/CryptoScreen';
 import DrawerContent from '../Components/DrawerContent';
 import WalletStackNavigator from './WalletStackNavigator';
+import CryptoStackNavigator from './CryptoStackNavigator';
 
 const Drawer = createDrawerNavigator();
 
@@ -19,7 +19,7 @@ const AppDrawerNavigator = () => {
       drawerContent={DrawerContent}
       useLegacyImplementation={false}>
       <Drawer.Screen name="Wallet" component={WalletStackNavigator} />
-      <Drawer.Screen name="Crypto" component={CryptoScreen} />
+      <Drawer.Screen name="Crypto" component={CryptoStackNavigator} />
     </Drawer.Navigator>
   );
 };
