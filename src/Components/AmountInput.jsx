@@ -11,7 +11,7 @@ const AmountInput = ({ accessibilityLabel, value, onChange }) => {
         placeholder="0.00"
         keyboardType="number-pad"
         value={value}
-        onChange={onChange}
+        onChange={(event) => onChange(event.nativeEvent.text)}
       />
     </View>
   );

@@ -10,7 +10,8 @@ const TextInputWithIcon = ({
   placeholder,
   value,
   onChange,
-  secureTextEntry = false
+  secureTextEntry = false,
+  isNumber = false
 }) => {
   const [hidden, setHidden] = useState(true);
 
@@ -25,12 +26,13 @@ const TextInputWithIcon = ({
       {icon && <FontAwesomeIcon icon={icon} size={25} style={styles.icon} />}
       <View className="flex-1">
         <TextInput
+          keyboardType={isNumber ? 'number-pad' : 'default'}
           className="text-xl border-solid"
           placeholder={placeholder}
           accessibilityLabel={accessibilityLabel}
           secureTextEntry={secureTextEntry ? hidden : false}
           value={value}
-          onChange={onChange}
+          onChange={(event) => onChange(event.nativeEvent.text)}
         />
       </View>
       <View className="flex-2 justify-end">
@@ -57,7 +59,8 @@ TextInputWithIcon.propTypes = {
   placeholder: PropTypes.string,
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
-  secureTextEntry: PropTypes.bool
+  secureTextEntry: PropTypes.bool,
+  isNumber: PropTypes.bool
 };
 
 const styles = StyleSheet.create({
