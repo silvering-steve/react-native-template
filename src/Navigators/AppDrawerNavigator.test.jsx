@@ -1,35 +1,30 @@
-// import React from 'react';
-// import { render, screen } from '@testing-library/react-native';
-// import { NavigationContainer } from '@react-navigation/native';
-// import AppDrawerNavigator from './AppDrawerNavigator';
+import React from 'react';
+import { fireEvent, render, screen } from '@testing-library/react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import AppDrawerNavigator from './AppDrawerNavigator';
 
-// jest.mock('@fortawesome/react-native-fontawesome', () => ({
-//   FontAwesomeIcon: ''
-// }));
+jest.mock('@fortawesome/react-native-fontawesome', () => ({
+  FontAwesomeIcon: ''
+}));
 
-// // jest.mock('@react-navigation/drawer', () => ({
-// //   createDrawerNavigator: jest.fn()
-// // }));
-// // jest.mock('./WalletDrawerNavigator');
+beforeEach(() => {
+  jest.useFakeTimers();
+});
 
-// beforeEach(() => {
-//   jest.useFakeTimers();
-// });
+afterEach(() => {
+  jest.useRealTimers();
+});
 
-// afterEach(() => {
-//   jest.useRealTimers();
-// });
+describe('AppDrawerNavigator', () => {
+  it('should change page to Login screen after Splash screen when user not logged in', async () => {
+    render(
+      <NavigationContainer>
+        <AppDrawerNavigator />
+      </NavigationContainer>
+    );
 
-// describe('AppDrawerNavigator', () => {
-//   it('should change page to Login screen after Splash screen when user not logged in', async () => {
-//     render(
-//       <NavigationContainer>
-//         <AppDrawerNavigator />
-//       </NavigationContainer>
-//     );
+    fireEvent.press(screen.getByText('Wallet'));
 
-//     const loginButton = await screen.findByLabelText('login button');
-
-//     expect(loginButton).toBeOnTheScreen();
-//   });
-// });
+    expect(screen.getByText('Balance')).toBeOnTheScreen();
+  });
+});

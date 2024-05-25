@@ -9,5 +9,6 @@ module.exports = {
   moduleNameMapper: {
     '\\.(css|less)$': '<rootDir>/__mocks__/styleMock.js'
   },
-  setupFilesAfterEnv: ['@testing-library/react-native/extend-expect']
+  setupFilesAfterEnv: ['@testing-library/react-native/extend-expect'],
+  setupFiles: ['<rootDir>/jest/setup.js']
 };

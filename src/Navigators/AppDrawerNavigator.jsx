@@ -16,7 +16,8 @@ const AppDrawerNavigator = () => {
         swipeEnabled: false,
         gestureEnabled: false
       }}
-      drawerContent={DrawerContent}>
+      drawerContent={DrawerContent}
+      useLegacyImplementation={false}>
       <Drawer.Screen name="Wallet" component={WalletStackNavigator} />
       <Drawer.Screen name="Crypto" component={CryptoScreen} />
     </Drawer.Navigator>
