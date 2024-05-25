@@ -29,7 +29,7 @@ describe('MenuButton', () => {
       <MenuButton
         icon={faEnvelope}
         accessibilityLabel="button"
-        content={content}
+        text={content}
       />
     );
 
@@ -50,7 +50,7 @@ describe('MenuButton', () => {
         icon={faEnvelope}
         accessibilityLabel="button"
         onPress={mockOnPress}
-        content={content}
+        text={content}
       />
     );
 
