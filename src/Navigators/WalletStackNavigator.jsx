@@ -2,7 +2,7 @@ import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import WalletScreen from '../Screens/WalletScreen/WalletScreen';
 import TransactionScreen from '../Screens/TransactionScreen/TransactionScreen';
-import TransferScreen from '../Screens/TransferScreen/TransferScreen';
+import TransferScreen from '../Screens/TransferScreens/TransferScreen';
 
 const Stack = createNativeStackNavigator();
 

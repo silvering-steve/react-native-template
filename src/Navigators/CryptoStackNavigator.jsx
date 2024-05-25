@@ -1,7 +1,7 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import CryptoScreen from '../Screens/CryptoScreen/CryptoScreen';
-import MarketScreen from '../Screens/MarketScreen/MarketScreen';
+import MarketScreen from '../Screens/MarketScreens/MarketScreen';
 import PortofolioScreen from '../Screens/PortofolioScreen/PortofolioScreen';
 
 const Stack = createNativeStackNavigator();
