@@ -3,7 +3,7 @@ import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 
-const MenuButton = ({ accessibilityLabel, icon, content, onPress }) => {
+const MenuButton = ({ accessibilityLabel, icon, text, onPress }) => {
   return (
     <TouchableOpacity
       onPress={onPress}
@@ -13,7 +13,7 @@ const MenuButton = ({ accessibilityLabel, icon, content, onPress }) => {
       <Text
         accessibilityLabel="content"
         className="text-xl text-[#514F5B] font-semibold">
-        {content}
+        {text}
       </Text>
     </TouchableOpacity>
   );
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
 MenuButton.propTypes = {
   accessibilityLabel: PropTypes.string,
   icon: PropTypes.any.isRequired,
-  content: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
   onPress: PropTypes.func
 };
 

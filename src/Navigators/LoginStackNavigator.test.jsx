@@ -11,7 +11,7 @@ jest.mock('@fortawesome/react-native-fontawesome', () => ({
 jest.mock('@react-navigation/drawer', () => ({
   createDrawerNavigator: jest.fn()
 }));
-jest.mock('./WalletDrawerNavigator');
+jest.mock('./AppDrawerNavigator');
 
 beforeEach(() => {
   jest.useFakeTimers();

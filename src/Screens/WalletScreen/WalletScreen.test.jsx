@@ -10,7 +10,7 @@ describe('WalletScreen', () => {
   let mockNavigation;
 
   beforeEach(() => {
-    mockNavigation = { replace: jest.fn(), navigate: jest.fn() };
+    mockNavigation = { navigate: jest.fn() };
     jest.useFakeTimers();
   });
 
@@ -31,7 +31,7 @@ describe('WalletScreen', () => {
         name: '081238161748'
       });
       const transferButton = screen.getByLabelText('transfer button');
-      const cryptoButton = screen.getByLabelText('crypto button');
+      const cryptoButton = screen.getByLabelText('transaction button');
 
       expect(balanceText).toBeOnTheScreen();
       expect(balanceAmountText).toBeOnTheScreen();
@@ -49,8 +49,8 @@ describe('WalletScreen', () => {
         const transferButton = screen.getByLabelText('transfer button');
         await user.press(transferButton);
 
-        expect(mockNavigation.replace).toHaveBeenCalledTimes(1);
-        expect(mockNavigation.replace).toHaveBeenCalledWith('Transfer');
+        expect(mockNavigation.navigate).toHaveBeenCalledTimes(1);
+        expect(mockNavigation.navigate).toHaveBeenCalledWith('Transfer');
       });
 
       it('should invoke navigation.replace when pressing crypto button', async () => {
@@ -61,8 +61,8 @@ describe('WalletScreen', () => {
         const cryptoButton = screen.getByLabelText('transaction button');
         await user.press(cryptoButton);
 
-        expect(mockNavigation.replace).toHaveBeenCalledTimes(1);
-        expect(mockNavigation.replace).toHaveBeenCalledWith('Transaction');
+        expect(mockNavigation.navigate).toHaveBeenCalledTimes(1);
+        expect(mockNavigation.navigate).toHaveBeenCalledWith('Transaction');
       });
     });
   });
