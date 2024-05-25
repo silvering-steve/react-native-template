@@ -10,7 +10,7 @@ const SplashScreen = ({ navigation }) => {
 
   return (
     <SafeAreaView className="flex-1 flex-row justify-center items-center bg-[#023E8A]">
-      <Text className="font-poppins font-bold text-5xl text-[#fff]">Chip</Text>
+      <Text className="font-poppins font-bold text-5xl text-[#fff]">CHIP</Text>
       <Text className="font-poppins font-bold text-5xl text-[#ADE8F4]">to</Text>
     </SafeAreaView>
   );

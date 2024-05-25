@@ -12,14 +12,14 @@ const LoginScreen = ({ navigation }) => {
   const [password, setPassword] = useState('');
 
   const handleOnLogin = () => {
-    navigation.replace('Wallet Drawer');
+    navigation.replace('App');
   };
 
   return (
     <SafeAreaView className="flex-1 bg-slate-100">
       <View className="basis-3/12 justify-center items-center flex-row">
         <Text className="font-poppins font-bold text-5xl text-[#023E8A]">
-          Chip
+          CHIP
         </Text>
         <Text className="font-poppins font-bold text-5xl text-[#0096C7]">
           to
@@ -34,7 +34,7 @@ const LoginScreen = ({ navigation }) => {
             Login
           </Text>
           <Text className="text-center text-[#3A3D42]/[.6]">
-            Login to your existing account to access all the features in Chipto.
+            Login to your existing account to access all the features in CHIPto.
           </Text>
           {/* Form */}
           <View className="mt-5 mx-5">

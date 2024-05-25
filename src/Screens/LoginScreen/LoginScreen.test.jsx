@@ -19,7 +19,7 @@ describe('LoginScreen', () => {
   it('should display the the Chipto, login text, login form and the login button when rendered', () => {
     render(<LoginScreen navigation={mockNavigation} />);
 
-    const chipText = screen.getByRole('text', { name: 'Chip' });
+    const chipText = screen.getByRole('text', { name: 'CHIP' });
     const toText = screen.getByRole('text', { name: 'to' });
     const loginText = screen.getByLabelText('login title');
     const emailInput = screen.getByLabelText('email input');

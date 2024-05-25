@@ -1,7 +1,7 @@
 // import React from 'react';
 // import { render, screen } from '@testing-library/react-native';
 // import { NavigationContainer } from '@react-navigation/native';
-// import WalletDrawerNavigator from './WalletDrawerNavigator';
+// import AppDrawerNavigator from './AppDrawerNavigator';
 
 // jest.mock('@fortawesome/react-native-fontawesome', () => ({
 //   FontAwesomeIcon: ''
@@ -20,11 +20,11 @@
 //   jest.useRealTimers();
 // });
 
-// describe('WalletDrawerNavigator', () => {
+// describe('AppDrawerNavigator', () => {
 //   it('should change page to Login screen after Splash screen when user not logged in', async () => {
 //     render(
 //       <NavigationContainer>
-//         <WalletDrawerNavigator />
+//         <AppDrawerNavigator />
 //       </NavigationContainer>
 //     );
 

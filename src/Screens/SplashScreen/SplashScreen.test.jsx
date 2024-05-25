@@ -15,7 +15,7 @@ describe('SplashScreen', () => {
   it('should show the Chipto text when rendered', () => {
     render(<SplashScreen navigation={mockNavigation} />);
 
-    const chipText = screen.getByRole('text', { name: 'Chip' });
+    const chipText = screen.getByRole('text', { name: 'CHIP' });
     const toText = screen.getByRole('text', { name: 'to' });
 
     expect(chipText).toBeOnTheScreen();
