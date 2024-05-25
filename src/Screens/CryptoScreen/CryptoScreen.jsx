@@ -5,6 +5,7 @@ import {
   faCoins,
   faMoneyBillTransfer
 } from '@fortawesome/free-solid-svg-icons';
+import PropTypes from 'prop-types';
 import UserInfoCard from '../../Components/UserInfoCard';
 import MenuButton from '../../Components/MenuButton';
 
@@ -34,9 +35,5 @@ const WalletScreen = () => {
     </SafeAreaView>
   );
 };
-
-const styles = StyleSheet.create({
-  icon: { color: '#0077B6' }
-});
 
 export default WalletScreen;
