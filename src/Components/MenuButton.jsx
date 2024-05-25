@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
 
 MenuButton.propTypes = {
   accessibilityLabel: PropTypes.string,
-  icon: PropTypes.object,
+  icon: PropTypes.any.isRequired,
   content: PropTypes.string.isRequired,
   onPress: PropTypes.func
 };

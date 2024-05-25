@@ -6,12 +6,13 @@ import {
   within
 } from '@testing-library/react-native';
 import MenuButton from './MenuButton';
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 
 jest.mock('@fortawesome/react-native-fontawesome', () => ({
   FontAwesomeIcon: ''
 }));
 
-describe('ActionButton', () => {
+describe('MenuButton', () => {
   afterEach(() => {
     jest.useRealTimers();
   });
@@ -24,7 +25,13 @@ describe('ActionButton', () => {
   it('should display button with content and not disable', () => {
     const content = 'Transfer';
 
-    render(<MenuButton accessibilityLabel="button" content={content} />);
+    render(
+      <MenuButton
+        icon={faEnvelope}
+        accessibilityLabel="button"
+        content={content}
+      />
+    );
 
     const button = screen.getByLabelText('button');
     const contentElement = within(button).getByLabelText('content', {
@@ -40,6 +47,7 @@ describe('ActionButton', () => {
 
     render(
       <MenuButton
+        icon={faEnvelope}
         accessibilityLabel="button"
         onPress={mockOnPress}
         content={content}

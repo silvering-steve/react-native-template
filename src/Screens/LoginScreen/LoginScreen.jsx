@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { SafeAreaView, StyleSheet, Text, TextInput, View } from 'react-native';
-
+import { SafeAreaView, Text, View } from 'react-native';
 import { faLock } from '@fortawesome/free-solid-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 
 import ActionButton from '../../Components/ActionButton';
+import TextInputWithIcon from '../../Components/TextInputWithIcon';
 
 const LoginScreen = ({ navigation }) => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
   const handleOnLogin = () => {
     navigation.replace('Wallet Drawer');
   };
@@ -35,20 +37,23 @@ const LoginScreen = ({ navigation }) => {
             Login to your existing account to access all the features in Chipto.
           </Text>
           {/* Form */}
-          <View className="flex-row items-start gap-5 mt-5 mx-5 border-b-2 pb-3 border-black/[.3]">
-            <FontAwesomeIcon icon={faEnvelope} size={25} style={styles.icon} />
-            <TextInput
-              className="text-xl border-solid"
+          <View className="mt-5 mx-5">
+            <TextInputWithIcon
+              icon={faEnvelope}
               placeholder="e-mail / phone"
               accessibilityLabel="email input"
+              value={username}
+              onChange={setUsername}
             />
           </View>
-          <View className="flex-row items-start gap-5 mt-5 mx-5 border-b-2 pb-3 border-black/[.3]">
-            <FontAwesomeIcon icon={faLock} size={25} style={styles.icon} />
-            <TextInput
-              className="text-xl border-solid"
+          <View className="mt-5 mx-5">
+            <TextInputWithIcon
+              secureTextEntry={true}
+              icon={faLock}
               placeholder="password"
               accessibilityLabel="password input"
+              value={password}
+              onChange={setPassword}
             />
           </View>
           {/* Error */}
@@ -74,9 +79,5 @@ LoginScreen.propTypes = {
     replace: PropTypes.func
   })
 };
-
-const styles = StyleSheet.create({
-  icon: { opacity: 0.5 }
-});
 
 export default LoginScreen;
