@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { View } from 'react-native';
 import MenuButton from '../../Components/MenuButton';
 import {
-  faCoins,
   faHistory,
   faMoneyBillTransfer
 } from '@fortawesome/free-solid-svg-icons';
@@ -20,7 +19,7 @@ const WalletMenu = ({ navigation }) => {
         icon={faMoneyBillTransfer}
         accessibilityLabel="transfer button"
         onPress={() => {
-          handleMenuButton('Transfer');
+          handleMenuButton('TransferStack');
         }}
       />
       <MenuButton

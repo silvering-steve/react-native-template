@@ -50,7 +50,7 @@ describe('WalletScreen', () => {
         await user.press(transferButton);
 
         expect(mockNavigation.navigate).toHaveBeenCalledTimes(1);
-        expect(mockNavigation.navigate).toHaveBeenCalledWith('Transfer');
+        expect(mockNavigation.navigate).toHaveBeenCalledWith('TransferStack');
       });
 
       it('should invoke navigation.replace when pressing crypto button', async () => {

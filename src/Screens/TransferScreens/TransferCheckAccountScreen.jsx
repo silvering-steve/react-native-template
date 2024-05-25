@@ -9,10 +9,11 @@ import {
   View
 } from 'react-native';
 import ActionButton from '../../Components/ActionButton';
+import TransactionFormScreen from './TransferFormScreen';
 
 const bankList = [{ bank: 'Gasius' }, { bank: 'A Nice' }, { bank: 'SMBC' }];
 
-const TransferCheckAccountScreen = () => {
+const TransferCheckAccountScreen = ({ navigation }) => {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [bankName, setBankName] = useState('');
   const [filterBankList, setFilterBankList] = useState([]);
@@ -34,6 +35,9 @@ const TransferCheckAccountScreen = () => {
 
   return (
     <SafeAreaView>
+      <Text onPress={() => navigation.navigate('TransferForm')}>
+        Transfer Check Account
+      </Text>
       <View className="mt-5 mx-5">
         <TextInputWithIcon
           placeholder="Input Bank"
