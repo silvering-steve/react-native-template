@@ -10,7 +10,7 @@ describe('WalletScreen', () => {
   let mockNavigation;
 
   beforeEach(() => {
-    mockNavigation = { replace: jest.fn() };
+    mockNavigation = { replace: jest.fn(), navigate: jest.fn() };
     jest.useFakeTimers();
   });
 
@@ -58,11 +58,11 @@ describe('WalletScreen', () => {
 
         render(<WalletScreen navigation={mockNavigation} />);
 
-        const cryptoButton = screen.getByLabelText('crypto button');
+        const cryptoButton = screen.getByLabelText('transaction button');
         await user.press(cryptoButton);
 
         expect(mockNavigation.replace).toHaveBeenCalledTimes(1);
-        expect(mockNavigation.replace).toHaveBeenCalledWith('Crypto');
+        expect(mockNavigation.replace).toHaveBeenCalledWith('Transaction');
       });
     });
   });

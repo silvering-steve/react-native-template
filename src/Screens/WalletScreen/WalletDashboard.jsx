@@ -21,7 +21,10 @@ const WalletDashboard = ({ balance, phoneNumber, navigation }) => {
 
 WalletDashboard.propTypes = {
   balance: PropTypes.string.isRequired,
-  phoneNumber: PropTypes.string.isRequired
+  phoneNumber: PropTypes.string.isRequired,
+  navigation: PropTypes.shape({
+    replace: PropTypes.func
+  })
 };
 
 export default WalletDashboard;
