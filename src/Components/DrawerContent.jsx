@@ -3,14 +3,9 @@ import PropTypes from 'prop-types';
 
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { DrawerItemList } from '@react-navigation/drawer';
-import {
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View
-} from 'react-native';
+import { SafeAreaView, StyleSheet, View } from 'react-native';
 import { faSignOut } from '@fortawesome/free-solid-svg-icons';
+import ActionButton from './ActionButton';
 
 const DrawerContent = (props) => {
   const handleOnLogout = () => {
@@ -22,14 +17,14 @@ const DrawerContent = (props) => {
       <View className="basis-10/12 mt-4">
         <DrawerItemList {...props} />
       </View>
-      <View className="basis-2/12 mt-4">
-        <TouchableOpacity
-          className="bg-[#EAEDFF] w-5/12 mx-3 py-2 rounded-xl flex-row justify-center items-center gap-2"
+      <View className="basis-2/12 w-1/2 mx-4">
+        <ActionButton
+          text="Logout"
           onPress={handleOnLogout}
-          accessibilityLabel="logout button">
-          <FontAwesomeIcon icon={faSignOut} style={styles.icon} size={15} />
-          <Text className="text-lg text-[#514F5B] font-semibold">Logout</Text>
-        </TouchableOpacity>
+          accessibilityLabel="logout button"
+          type="secondary">
+          <FontAwesomeIcon icon={faSignOut} color="#2253F6" size={15} />
+        </ActionButton>
       </View>
     </SafeAreaView>
   );
