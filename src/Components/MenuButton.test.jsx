@@ -8,10 +8,6 @@ import {
 import MenuButton from './MenuButton';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 
-jest.mock('@fortawesome/react-native-fontawesome', () => ({
-  FontAwesomeIcon: ''
-}));
-
 describe('MenuButton', () => {
   afterEach(() => {
     jest.useRealTimers();

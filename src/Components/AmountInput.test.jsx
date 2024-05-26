@@ -7,10 +7,6 @@ import {
 } from '@testing-library/react-native';
 import AmountInput from './AmountInput';
 
-jest.mock('@fortawesome/react-native-fontawesome', () => ({
-  FontAwesomeIcon: ''
-}));
-
 describe('AmountInput', () => {
   afterEach(() => {
     jest.useRealTimers();

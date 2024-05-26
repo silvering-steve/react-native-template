@@ -2,10 +2,6 @@ import { render, screen, userEvent } from '@testing-library/react-native';
 import React from 'react';
 import WalletScreen from './WalletScreen';
 
-jest.mock('@fortawesome/react-native-fontawesome', () => ({
-  FontAwesomeIcon: ''
-}));
-
 describe('WalletScreen', () => {
   let mockNavigation;
 

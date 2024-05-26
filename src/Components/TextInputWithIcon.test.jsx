@@ -8,10 +8,6 @@ import {
 import TextInputWithIcon from './TextInputWithIcon';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 
-jest.mock('@fortawesome/react-native-fontawesome', () => ({
-  FontAwesomeIcon: ''
-}));
-
 describe('TextInputWithIcon', () => {
   afterEach(() => {
     jest.useRealTimers();

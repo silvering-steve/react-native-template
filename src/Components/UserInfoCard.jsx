@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, View } from 'react-native';
 import PropTypes from 'prop-types';
 
-const ItemCard = ({ accessibilityLabel, title, money, phoneNumber }) => {
+const UserInfoCard = ({ accessibilityLabel, title, money, phoneNumber }) => {
   return (
     <View
       accessibilityLabel={accessibilityLabel}
@@ -24,11 +24,11 @@ const ItemCard = ({ accessibilityLabel, title, money, phoneNumber }) => {
   );
 };
 
-ItemCard.propTypes = {
+UserInfoCard.propTypes = {
   accessibilityLabel: PropTypes.string,
   title: PropTypes.string.isRequired,
   money: PropTypes.string.isRequired,
   phoneNumber: PropTypes.string.isRequired
 };
 
-export default ItemCard;
+export default UserInfoCard;

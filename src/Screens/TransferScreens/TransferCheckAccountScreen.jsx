@@ -9,7 +9,8 @@ import {
   View
 } from 'react-native';
 import ActionButton from '../../Components/ActionButton';
-import TransactionFormScreen from './TransferFormScreen';
+import PropTypes from 'prop-types';
+import ItemCard from '../../Components/ItemCard';
 
 const bankList = [{ bank: 'Gasius' }, { bank: 'A Nice' }, { bank: 'SMBC' }];
 
@@ -17,13 +18,21 @@ const TransferCheckAccountScreen = ({ navigation }) => {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [bankName, setBankName] = useState('');
   const [filterBankList, setFilterBankList] = useState([]);
+  const [userFound, setUserFound] = useState({});
+
+  const handleCheck = () => {
+    setUserFound({
+      id: '1',
+      image: 'https://reactnative.dev/img/tiny_logo.png',
+      name: 'Samuel Suhi',
+      phoneNumber: '088218173673'
+    });
+  };
+
   const filterBanks = (value) => {
-    let filterData =
-      bankList && bankList?.length > 0
-        ? bankList?.filter((data) =>
-            data?.bank?.toLowerCase()?.includes(value?.toLowerCase())
-          )
-        : [];
+    let filterData = bankList?.filter((data) =>
+      data?.bank?.toLowerCase()?.includes(value?.toLowerCase())
+    );
     setBankName(value);
     setFilterBankList([...filterData]);
   };
@@ -35,9 +44,6 @@ const TransferCheckAccountScreen = ({ navigation }) => {
 
   return (
     <SafeAreaView>
-      <Text onPress={() => navigation.navigate('TransferForm')}>
-        Transfer Check Account
-      </Text>
       <View className="mt-5 mx-5">
         <TextInputWithIcon
           placeholder="Input Bank"
@@ -49,7 +55,9 @@ const TransferCheckAccountScreen = ({ navigation }) => {
         <FlatList
           data={filterBankList}
           renderItem={({ item: { bank: bankFilter } }) => (
-            <TouchableOpacity onPress={() => onBankSelected(bankFilter)}>
+            <TouchableOpacity
+              className="p-3 border-b-2 border-black/[.1]"
+              onPress={() => onBankSelected(bankFilter)}>
               <Text>{bankFilter}</Text>
             </TouchableOpacity>
           )}
@@ -68,10 +76,33 @@ const TransferCheckAccountScreen = ({ navigation }) => {
       </View>
 
       <View className="mt-10 m-5 w-1/3 self-end">
-        <ActionButton content="Check" accessibilityLabel="check button" />
+        <ActionButton
+          onPress={handleCheck}
+          text="Check"
+          accessibilityLabel="check button"
+          type="white"
+        />
       </View>
+
+      {userFound.id && (
+        <View className="mt-7 w-2/3 self-center">
+          <ItemCard
+            accessibilityLabel="user info card"
+            onPress={() => navigation.navigate('TransferForm')}
+            imagePath={userFound.image}
+            content={userFound.name}
+            subContent={userFound.phoneNumber}
+          />
+        </View>
+      )}
     </SafeAreaView>
   );
+};
+
+TransferCheckAccountScreen.propTypes = {
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func
+  })
 };
 
 export default TransferCheckAccountScreen;

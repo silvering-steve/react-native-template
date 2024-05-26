@@ -5,9 +5,6 @@ import { NavigationContainer } from '@react-navigation/native';
 
 import WalletStackNavigator from './WalletStackNavigator';
 
-jest.mock('@fortawesome/react-native-fontawesome', () => ({
-  FontAwesomeIcon: ''
-}));
 jest.mock('@react-navigation/drawer', () => ({
   createDrawerNavigator: jest.fn()
 }));

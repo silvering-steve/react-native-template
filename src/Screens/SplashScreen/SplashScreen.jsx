@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import { SafeAreaView, Text } from 'react-native';
 
 const SplashScreen = ({ navigation }) => {
-  // useEffect(() => {
-  //   setTimeout(() => navigation.replace('Login'), 800);
-  // }, [navigation]);
+  useEffect(() => {
+    setTimeout(() => navigation.replace('Login'), 800);
+  }, [navigation]);
 
   return (
     <SafeAreaView className="flex-1 flex-row justify-center items-center bg-[#023E8A]">
