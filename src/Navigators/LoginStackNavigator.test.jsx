@@ -30,17 +30,4 @@ describe('LoginStackNavigator', () => {
 
     expect(loginButton).toBeOnTheScreen();
   });
-
-  // it('should change page to Wallet screen after Login screen when user logged in successfully', async () => {
-  //   const user = userEvent.setup();
-  //
-  //   render(
-  //     <NavigationContainer>
-  //       <LoginStackNavigator />
-  //     </NavigationContainer>
-  //   );
-  //
-  //   const loginButton = await screen.findByLabelText('login button');
-  //   await user.press(loginButton);
-  // });
 });
