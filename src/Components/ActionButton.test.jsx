@@ -16,7 +16,7 @@ describe('ActionButton', () => {
     jest.useFakeTimers();
   });
 
-  it('should display button with content and not disable', () => {
+  it('should display primary button and not disable', () => {
     const content = 'Submit';
 
     render(<ActionButton accessibilityLabel="button" text={content} />);
@@ -29,7 +29,26 @@ describe('ActionButton', () => {
     expect(contentElement.props.className).toContain('text-white');
   });
 
-  it('should display button with content and disable', () => {
+  it('should display secondary button with children', () => {
+    const content = 'Submit';
+    const children = jest.fn();
+
+    render(
+      <ActionButton accessibilityLabel="button" text={content} type="secondary">
+        {children()}
+      </ActionButton>
+    );
+
+    const button = screen.getByLabelText('button');
+    const contentElement = within(button).getByLabelText('content', {
+      name: `${content}`
+    });
+    expect(contentElement).toBeOnTheScreen();
+    expect(contentElement.props.className).toContain('text-[#2253F6]');
+    expect(children).toHaveBeenCalledTimes(1);
+  });
+
+  it('should display disable button', () => {
     const content = 'Submit';
 
     render(

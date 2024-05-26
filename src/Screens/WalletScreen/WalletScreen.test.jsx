@@ -21,7 +21,7 @@ describe('WalletScreen', () => {
 
       const balanceText = screen.getByRole('text', { name: 'Balance' });
       const balanceAmountText = screen.getByRole('text', {
-        name: 'Rp 100,000'
+        name: 'Rp100,000'
       });
       const phoneNumberText = screen.getByRole('text', {
         name: '081238161748'

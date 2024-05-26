@@ -11,7 +11,7 @@ const CryptoDashboard = ({ balance, phoneNumber, navigation }) => {
       <View className="mx-5">
         <UserInfoCard
           money={balance}
-          title="Balance"
+          title="Assets"
           phoneNumber={phoneNumber}
         />
         <CryptoMenu navigation={navigation} />

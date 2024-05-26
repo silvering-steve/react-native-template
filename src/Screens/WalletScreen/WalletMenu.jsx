@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { View } from 'react-native';
-import MenuButton from '../../Components/MenuButton';
 import {
   faHistory,
   faMoneyBillTransfer
 } from '@fortawesome/free-solid-svg-icons';
+import ActionButton from '../../Components/ActionButton';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 
 const WalletMenu = ({ navigation }) => {
   const handleMenuButton = (screen) => {
@@ -13,23 +14,33 @@ const WalletMenu = ({ navigation }) => {
   };
 
   return (
-    <View className="flex-row justify-center gap-5 px-2 mt-3">
-      <MenuButton
-        text="Transfer"
-        icon={faMoneyBillTransfer}
-        accessibilityLabel="transfer button"
-        onPress={() => {
-          handleMenuButton('TransferStack');
-        }}
-      />
-      <MenuButton
-        text="Transaction"
-        accessibilityLabel="transaction button"
-        icon={faHistory}
-        onPress={() => {
-          handleMenuButton('Transaction');
-        }}
-      />
+    <View className="flex-row justify-center gap-5 px-2 m-3 mt-5">
+      <View className="w-2/4 self-center">
+        <ActionButton
+          text="Transfer"
+          type="secondary"
+          accessibilityLabel="transfer button"
+          onPress={() => {
+            handleMenuButton('TransferStack');
+          }}>
+          <FontAwesomeIcon
+            color="#2253F6"
+            icon={faMoneyBillTransfer}
+            size={25}
+          />
+        </ActionButton>
+      </View>
+      <View className="w-2/4 self-center">
+        <ActionButton
+          text="Transaction"
+          type="secondary"
+          accessibilityLabel="transaction button"
+          onPress={() => {
+            handleMenuButton('Transaction');
+          }}>
+          <FontAwesomeIcon color="#2253F6" icon={faHistory} size={20} />
+        </ActionButton>
+      </View>
     </View>
   );
 };

@@ -80,7 +80,7 @@ const TransferCheckAccountScreen = ({ navigation }) => {
           onPress={handleCheck}
           text="Check"
           accessibilityLabel="check button"
-          type="white"
+          type="secondary"
         />
       </View>
 

@@ -6,18 +6,16 @@ const UserInfoCard = ({ accessibilityLabel, title, money, phoneNumber }) => {
   return (
     <View
       accessibilityLabel={accessibilityLabel}
-      className="basis-2/3 bg-[#023E8A] rounded-3xl pt-5 px-5">
-      <Text accessibilityLabel="title" className="basis-1/5 text-white m-1">
+      className="bg-[#2253F6] rounded-3xl p-10">
+      <Text accessibilityLabel="title" className="text-white mb-7">
         {title}
       </Text>
       <Text
         accessibilityLabel="money"
-        className="basis-2/5 text-white text-4xl font-semibold m-1">
+        className="text-white text-4xl font-semibold mb-7">
         {money}
       </Text>
-      <Text
-        accessibilityLabel="phoneNumber"
-        className="basis-2/5 text-white font-medium m-1">
+      <Text accessibilityLabel="phoneNumber" className="text-white font-medium">
         {phoneNumber}
       </Text>
     </View>

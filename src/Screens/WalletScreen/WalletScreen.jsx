@@ -6,7 +6,7 @@ import WalletDashboard from './WalletDashboard';
 import DrawerHeader from '../../Components/DrawerHeader';
 
 const WalletScreen = ({ navigation }) => {
-  const balance = 'Rp ' + (100000).toLocaleString();
+  const balance = 'Rp' + (100000).toLocaleString();
   const phoneNumber = '081238161748';
 
   return (

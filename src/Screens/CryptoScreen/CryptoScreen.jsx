@@ -5,7 +5,7 @@ import DrawerHeader from '../../Components/DrawerHeader';
 import CryptoDashboard from './CryptoDashboard';
 
 const CryptoScreen = ({ navigation }) => {
-  const assets = 'Rp ' + (100000).toLocaleString();
+  const assets = 'Rp' + (100000).toLocaleString();
   const phoneNumber = '081238161748';
 
   return (
