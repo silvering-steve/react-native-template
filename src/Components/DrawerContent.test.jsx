@@ -2,9 +2,6 @@ import React from 'react';
 import { render, screen, userEvent } from '@testing-library/react-native';
 import DrawerContent from './DrawerContent';
 
-jest.mock('@fortawesome/react-native-fontawesome', () => ({
-  FontAwesomeIcon: ''
-}));
 jest.mock('@react-navigation/drawer', () => ({
   DrawerItemList: jest.fn()
 }));

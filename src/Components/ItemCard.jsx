@@ -49,15 +49,15 @@ const ItemCard = ({
         )}
       </View>
 
-      <View className="flex-1 justify-center">
-        {rightContent && (
+      {rightContent && (
+        <View className="flex-1 justify-center">
           <Text
             className="text-xl text-bold m-2 text-right"
             accessibilityLabel="right content">
             {rightContent}
           </Text>
-        )}
-      </View>
+        </View>
+      )}
     </TouchableOpacity>
   );
 };

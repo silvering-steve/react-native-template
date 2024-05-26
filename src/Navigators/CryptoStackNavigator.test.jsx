@@ -5,9 +5,6 @@ import { NavigationContainer } from '@react-navigation/native';
 
 import CryptoStackNavigator from './CryptoStackNavigator';
 
-jest.mock('@fortawesome/react-native-fontawesome', () => ({
-  FontAwesomeIcon: ''
-}));
 jest.mock('@react-navigation/drawer', () => ({
   createDrawerNavigator: jest.fn()
 }));

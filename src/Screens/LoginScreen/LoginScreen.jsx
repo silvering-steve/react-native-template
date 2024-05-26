@@ -63,7 +63,7 @@ const LoginScreen = ({ navigation }) => {
           {/* Button */}
           <View className="w-2/3 self-center">
             <ActionButton
-              content={'Login'}
+              text={'Login'}
               onPress={handleOnLogin}
               accessibilityLabel="login button"
             />

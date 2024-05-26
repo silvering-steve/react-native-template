@@ -2,10 +2,6 @@ import React from 'react';
 import { render, screen, userEvent } from '@testing-library/react-native';
 import DrawerHeader from './DrawerHeader';
 
-jest.mock('@fortawesome/react-native-fontawesome', () => ({
-  FontAwesomeIcon: ''
-}));
-
 describe('DrawerHeader', () => {
   afterEach(() => {
     jest.useRealTimers();

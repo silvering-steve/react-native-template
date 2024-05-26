@@ -19,7 +19,7 @@ describe('ActionButton', () => {
   it('should display button with content and not disable', () => {
     const content = 'Submit';
 
-    render(<ActionButton accessibilityLabel="button" content={content} />);
+    render(<ActionButton accessibilityLabel="button" text={content} />);
 
     const button = screen.getByLabelText('button');
     const contentElement = within(button).getByLabelText('content', {
@@ -33,11 +33,7 @@ describe('ActionButton', () => {
     const content = 'Submit';
 
     render(
-      <ActionButton
-        accessibilityLabel="button"
-        content={content}
-        disabled={true}
-      />
+      <ActionButton accessibilityLabel="button" text={content} type="disable" />
     );
 
     const button = screen.getByLabelText('button');
@@ -57,7 +53,7 @@ describe('ActionButton', () => {
       <ActionButton
         accessibilityLabel="button"
         onPress={mockOnPress}
-        content={content}
+        text={content}
       />
     );
 

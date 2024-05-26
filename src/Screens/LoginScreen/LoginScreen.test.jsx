@@ -3,10 +3,6 @@ import { render, screen } from '@testing-library/react-native';
 
 import LoginScreen from './LoginScreen';
 
-jest.mock('@fortawesome/react-native-fontawesome', () => ({
-  FontAwesomeIcon: ''
-}));
-
 describe('LoginScreen', () => {
   let mockNavigation;
 

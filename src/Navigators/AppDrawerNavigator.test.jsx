@@ -3,10 +3,6 @@ import { fireEvent, render, screen } from '@testing-library/react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import AppDrawerNavigator from './AppDrawerNavigator';
 
-jest.mock('@fortawesome/react-native-fontawesome', () => ({
-  FontAwesomeIcon: ''
-}));
-
 beforeEach(() => {
   jest.useFakeTimers();
 });
